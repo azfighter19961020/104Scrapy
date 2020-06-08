@@ -16,4 +16,5 @@ settings.py --> 設定splash url以及middleware <br>
 
 > 根據工作分為不同的資料庫
 
-(img)
+<img src="https://github.com/charlie11438/104Scrapy/blob/master/img/result1.png" />
+<img src="https://github.com/charlie11438/104Scrapy/blob/master/img/result2.png" />
