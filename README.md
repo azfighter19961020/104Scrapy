@@ -14,4 +14,6 @@ settings.py --> 設定splash url以及middleware <br>
 
 # 資料爬取效果
 
+> 根據工作分為不同的資料庫
+
 (img)
