@@ -18,3 +18,7 @@ settings.py --> 設定splash url以及middleware <br>
 
 <img src="https://github.com/charlie11438/104Scrapy/blob/master/img/result1.png" />
 <img src="https://github.com/charlie11438/104Scrapy/blob/master/img/result2.png" />
+
+
+> 20201105 last update
+

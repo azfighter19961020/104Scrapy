@@ -22,3 +22,10 @@ class E04Item(scrapy.Item):
     school = scrapy.Field()
     description = scrapy.Field()
     salary = scrapy.Field()
+    def toDict(self):
+        return {k:v for k,v in self._values.items()}
+    def getList(self):
+        return [v for v in self._values.values()]
+    def getField(self):
+        return [k for k in self._values.keys()]
+

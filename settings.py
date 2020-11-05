@@ -16,7 +16,7 @@ BOT_NAME = 'e04'
 SPIDER_MODULES = ['e04.spiders']
 NEWSPIDER_MODULE = 'e04.spiders'
 
-SPLASH_URL = "http://localhost:8050/"
+SPLASH_URL = "http://192.168.99.101:8050/"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'e04 (+http://www.yourdomain.com)'
@@ -30,7 +30,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -73,7 +73,10 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'e04.pipelines.E04Pipeline': 300,
+   'e04.pipelines.MYSQLPipeline': 300,
+   'e04.pipelines.CSVPipeline':400,
+   'e04.pipelines.MONGOPipeline':500,
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -10,25 +10,34 @@ class e04Spider(scrapy.Spider):
 	def start_requests(self):
 		queryStringList = [
 			{
-				'keyword':'python',
+				'keyword':'java',
 				'area':'6001001000',
 			},
-			{
-				'keyword':'爬蟲',
-				'area':'6001001000',
-			},
-			{
-				'keyword':'python後端',
-				'area':'6001001000',
-			},
-			{
-				'keyword':'資料分析',
-				'area':'6001001000',
-			},
-			{
-				'keyword':'java工程師',
-				'area':'6001001000',
-			},
+			# {
+			# 	'keyword':'爬蟲',
+			# 	'area':'6001001000',
+			# },
+			# {
+			# 	'keyword':'python後端',
+			# 	'area':'6001001000',
+			# },
+			# {
+			# 	'keyword':'資料分析',
+			# 	'area':'6001001000',
+			# },
+			# {
+			# 	'keyword':'java工程師',
+			# 	'area':'6001001000',
+			# },
+			# {
+			# 	'keyword':'遊戲設計',
+			# 	'area':'6001001000',
+			# },
+			# {
+			# 	'keyword':'devops',
+			# 	'area':'6001001000',
+			# },
+
 		]
 		for queryString in queryStringList:
 			yield FormRequest(url=self.start_url,method="GET",formdata=queryString,callback=self.detail_requests)
@@ -57,7 +66,7 @@ class e04Spider(scrapy.Spider):
 			item['jobLink'] = "http:" + job.css('a').re('.*href="(.*?)" class=.*')[0]
 			item['company'] = job.xpath('./ul[1]/li/a/@title').get().split("：")[1].replace("\n公司住址","")
 			item['companyAddress'] = job.xpath('./ul[1]/li/a/@title').get().split("：")[-1]
-			item['companyLink'] = "http:" +  job.xpath('./ul[1]/li/a/@href').get()
+			item['companyLink'] = "http:" + job.xpath('./ul[1]/li/a/@href').get()
 			item['jobArea'] = job.xpath('./ul[2]/li[1]/text()').get()
 			item['experience'] = job.xpath('./ul[2]/li[2]/text()').get()
 			item['school'] = job.xpath('./ul[2]/li[3]/text()').get()
